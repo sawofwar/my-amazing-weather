@@ -4,7 +4,6 @@ import Card from "./components/Card";
 
 function App() {
   const [myCity, setMyCity] = useState();
-  const [cityFound, setCityFound] = useState(false);
   const [weather, setWeather] = useState();
   const [againCounter, setAgainCounter] = useState(0);
   // weather api: https://goweather.herokuapp.com/weather/Curitiba
@@ -22,7 +21,6 @@ function App() {
             throw new Error(`Error: ${res.status}`);
           } else {
             const { city } = await res.json();
-            setCityFound(true);
             setMyCity(city);
 
             const weatherAPI = await fetch(
