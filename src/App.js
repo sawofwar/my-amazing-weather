@@ -1,10 +1,12 @@
 import "./App.css";
 import { useEffect, useState } from "react";
+import Card from "./components/Card";
 
 function App() {
   const [myCity, setMyCity] = useState();
   const [cityFound, setCityFound] = useState(false);
   const [weather, setWeather] = useState();
+  const [againCounter, setAgainCounter] = useState(0);
   // weather api: https://goweather.herokuapp.com/weather/Curitiba
   // location api: 'https://geocode.xyz/51.50354,-0.12768?geoit=xml&auth=your_api_key' || https://geocode.xyz/${lat},${lng}?geoit=json
 
@@ -36,6 +38,12 @@ function App() {
       }
     );
   };
+
+  function againClick() {
+    getLocationAndWeather();
+    const updatedAgainCounter = againCounter + 1;
+    setAgainCounter(updatedAgainCounter);
+  }
 
   useEffect(() => {
     getLocationAndWeather();
@@ -70,31 +78,26 @@ function App() {
         {/* <img src="" className="App-logo" alt="logo" /> */}
         {/* <h1>Current Weather</h1> */}
         {myCity ? (
-          <h2>Weather in {myCity}</h2>
+          <h1>Weather in {myCity}</h1>
         ) : (
           <h2>City not found. Try again.</h2>
         )}
-        {myCity ? (
-          <div>
-            <p>{myCity}</p>
-            <p>Temperature: {weather.temperature}</p>
-            <p>Weather: {weather.description}</p>
-            <p>Wind: {weather.wind}</p>
-
-            <ul>
-              {weather.forecast.map((day) => (
-                <li>{day.temperature}</li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <p>Try once again</p>
-        )}
-        {/* {cityFound ? <p>City found</p> : <p>City not found yet</p>} */}
-
-        <p></p>
-        <button onClick={getLocationAndWeather}>Try again</button>
       </header>
+      {myCity ? (
+        <>
+          <Card myCity={myCity} weather={weather} />
+
+          <ul>
+            {weather?.forecast.map((day) => (
+              <li key={day.day}>{day.temperature}</li>
+            ))}
+          </ul>
+        </>
+      ) : (
+        <p>Try once again!</p>
+      )}
+
+      <button onClick={againClick}>Try again. Clicks: {againCounter}</button>
     </div>
   );
 }
