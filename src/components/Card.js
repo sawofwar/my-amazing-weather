@@ -1,4 +1,11 @@
 import "./Card.css";
+import { WiWindBeaufort6 } from "weather-icons-react";
+
+// TODO: replace C with celcius icon
+// https://najens.github.io/weather-icons-react/
+
+// TODO: read up on React.lazy and React.suspense for conditional importing
+// https://prawira.medium.com/react-conditional-import-conditional-css-import-110cc58e0da6
 
 function Card({ myCity, weather }) {
   const wind = {
@@ -37,8 +44,6 @@ function Card({ myCity, weather }) {
       const word1Low =
         windTypeArray[1].charAt(0).toLowerCase() + windTypeArray[1].slice(1);
 
-      const capitalisedWindTypeWithSpace =
-        windTypeWithSpace.charAt(0).toUpperCase() + windTypeWithSpace.slice(1);
       return `${word0Cap} ${word1Low}`;
     }
   }
