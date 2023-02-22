@@ -1,5 +1,5 @@
 import "./Card.css";
-import { WiWindBeaufort6, WiCelsius } from "weather-icons-react";
+import { WiCelsius } from "weather-icons-react";
 
 // TODO: replace C with celcius icon
 // https://najens.github.io/weather-icons-react/
