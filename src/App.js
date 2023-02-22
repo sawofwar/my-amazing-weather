@@ -75,27 +75,15 @@ function App() {
       <header className="App-header">
         {/* <img src="" className="App-logo" alt="logo" /> */}
         {/* <h1>Current Weather</h1> */}
-        {myCity ? (
-          <h1>Weather in {myCity}</h1>
-        ) : (
-          <h2>City not found. Try again.</h2>
-        )}
+        {myCity ? <h1>Weather in {myCity}</h1> : <h2>Something went wrong.</h2>}
       </header>
       {myCity ? (
         <>
           <Card myCity={myCity} weather={weather} />
-
-          <ul>
-            {weather?.forecast.map((day) => (
-              <li key={day.day}>{day.temperature}</li>
-            ))}
-          </ul>
         </>
       ) : (
-        <p>Try once again!</p>
+        <button onClick={againClick}>Try again. Clicks: {againCounter}</button>
       )}
-
-      <button onClick={againClick}>Try again. Clicks: {againCounter}</button>
     </div>
   );
 }

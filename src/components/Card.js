@@ -1,5 +1,5 @@
 import "./Card.css";
-import { WiWindBeaufort6 } from "weather-icons-react";
+import { WiWindBeaufort6, WiCelsius } from "weather-icons-react";
 
 // TODO: replace C with celcius icon
 // https://najens.github.io/weather-icons-react/
@@ -50,10 +50,13 @@ function Card({ myCity, weather }) {
 
   return (
     <div className="weather-card">
-      {/* <h3 className="weather-card__heading">{myCity}</h3> */}
-
       <p className="weather-card__temperature">
-        {weather?.temperature ?? "loading..."}
+        {(
+          <>
+            {String(weather?.temperature.split(" ")[0])}
+            <WiCelsius size={65} style={{ marginLeft: "-16px" }} />
+          </>
+        ) ?? "loading..."}
       </p>
 
       <p className="weather-card__type">

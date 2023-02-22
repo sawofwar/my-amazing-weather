@@ -24,7 +24,7 @@ p {
 
 .weather-card__temperature {
   font-size: 4rem;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
 }
 
 --loading {
