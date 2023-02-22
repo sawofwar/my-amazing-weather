@@ -2,7 +2,6 @@
 /* Xiaomi Redmi Note 8 Pro has viewport size 393 x 851 Pixels and its pixel ratio is about 2.75. */
 
 .weather-card {
-  /* TODO: remove/adjust margin-bottom */
   margin: auto;
   margin-bottom: 96px;
 
