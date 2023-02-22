@@ -8,13 +8,15 @@
 
 :root {
   --text-color: #212529;
-  --text-test: red;
+  --background-color: #e7f5ff;
 }
 
 body {
   font-size: 20px;
   font-family: Montserrat;
   color: var(--text-color);
+  background: url("./images/background.avif") no-repeat;
+  background-size: cover;
 }
 
 .App {
@@ -30,5 +32,19 @@ header {
 
 header h1 {
   font-size: 2rem;
-  letter-spacing: -1.5px;
+  letter-spacing: -1px;
+  color: var(--background-color);
+}
+
+.btn-again {
+  border: none;
+  background-color: var(--background-color);
+  padding: 10px;
+  font-family: Montserrat;
+  font-size: 1.25rem;
+  transition: 0.03 ease-in-out;
+}
+
+.btn-again:active {
+  background-color: #a5d8ff;
 }

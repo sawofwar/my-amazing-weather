@@ -12,7 +12,7 @@
   width: 18rem;
   aspect-ratio: 3/3.5;
 
-  background: #e7f5ff;
+  background: var(--background-color);
 
   align-items: center;
   justify-content: center;
@@ -20,13 +20,15 @@
 
 p {
   margin-bottom: 12px;
+  font-size: 1.5rem;
 }
 
 .weather-card__temperature {
   font-size: 4rem;
   letter-spacing: -2px;
+  font-weight: 700;
 }
 
---loading {
-  font-size: 0.5rem;
+.weather-card__temperature--loading {
+  font-size: 1.5rem;
 }

@@ -75,14 +75,16 @@ function App() {
       <header className="App-header">
         {/* <img src="" className="App-logo" alt="logo" /> */}
         {/* <h1>Current Weather</h1> */}
-        {myCity ? <h1>Weather in {myCity}</h1> : <h2>Something went wrong.</h2>}
+        {myCity ? <h1>Weather in {myCity}</h1> : <h1>Something went wrong.</h1>}
       </header>
       {myCity ? (
         <>
           <Card myCity={myCity} weather={weather} />
         </>
       ) : (
-        <button onClick={againClick}>Try again. Clicks: {againCounter}</button>
+        <button className="btn-again" onClick={againClick}>
+          Try again. Clicks: {againCounter}
+        </button>
       )}
     </div>
   );
