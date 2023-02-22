@@ -28,7 +28,7 @@ function App() {
             );
             const weatherData = await weatherAPI.json();
             setWeather(weatherData);
-            console.log(weatherData);
+            // console.log(weatherData);
           }
         } catch (error) {
           console.error(error.message);
