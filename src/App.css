@@ -16,7 +16,8 @@ body {
   font-family: Montserrat;
   color: var(--text-color);
   background: url("./images/background.jpg") no-repeat;
-  background-size: cover;
+  background-size: 100vw cover;
+  background-position: 40% 40%;
 }
 
 .App {
