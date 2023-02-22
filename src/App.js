@@ -26,9 +26,13 @@ function App() {
             const weatherAPI = await fetch(
               `https://goweather.herokuapp.com/weather/${city}`
             );
-            const weatherData = await weatherAPI.json();
-            setWeather(weatherData);
-            // console.log(weatherData);
+
+            if (!weatherAPI.ok) {
+              throw new Error(`Error: ${weatherAPI.status}`);
+            } else {
+              const weatherData = await weatherAPI.json();
+              setWeather(weatherData);
+            }
           }
         } catch (error) {
           console.error(error.message);

@@ -50,8 +50,8 @@ function Card({ myCity, weather }) {
 
   return (
     <div className="weather-card">
-      <p className="weather-card__temperature">
-        {weather ? (
+      <div className="weather-card__temperature">
+        {weather?.temperature ? (
           <>
             {String(weather?.temperature.split(" ")[0])}
             <WiCelsius
@@ -62,7 +62,7 @@ function Card({ myCity, weather }) {
         ) : (
           <p className="weather-card__temperature--loading">loading...</p>
         )}
-      </p>
+      </div>
 
       <p className="weather-card__type">
         {weather?.description ?? "loading..."}
