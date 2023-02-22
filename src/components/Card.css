@@ -31,4 +31,5 @@ p {
 .weather-card__temperature--loading {
   font-size: 1.5rem;
   font-weight: 500;
+  letter-spacing: 1px;
 }
